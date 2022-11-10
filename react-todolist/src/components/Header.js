@@ -1,14 +1,15 @@
 function Header() {
     return (
-      <header className="Header">
-        <h1>لیست انجام کارها</h1>
-         <ul className="box-menu">
-            <li className="active"><span href="">کار ها</span></li>
-            <li><span href="">درحال انجام دادن</span></li>
-         </ul>
+     <header>
+        <div className="navbar navbar-dark bg-dark shadow-sm">
+            <div className="container d-flex justify-content-between">
+                <a href="#" className="navbar-brand d-flex align-items-center">
+                <strong>Todo App</strong>
+                </a>
+            </div>
+        </div>
       </header>
-    );
-  }
-  
-  export default Header;
-  
+    )
+}
+
+export default Header;
