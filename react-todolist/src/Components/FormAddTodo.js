@@ -8,13 +8,13 @@ function FormAddTodo(props) {
     }
 
 
-    let inputHander = (e) => setText(e.target.value);
+    let inputHandler = (e) => setText(e.target.value);
 
 
     return (
         <form className="form-inline" onSubmit={formHandler}>
             <div className="form-group d-flex">
-                <input type="text" className="form-control mx-sm-3" onChange={inputHander} placeholder="i want to do ..." value={text} />
+                <input type="text" className="form-control mx-sm-3" onChange={inputHandler} placeholder="i want to do ..." value={text} />
                 <button type="submit" className="btn btn-primary">add</button>
             </div>
         </form>
