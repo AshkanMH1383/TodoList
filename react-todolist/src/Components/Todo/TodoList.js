@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState , useContext } from 'react';
 import Todo from './Todo';
+import TodosContext from './../../Context/todos';
 
 function TodoList(props) {
     const [statusDone , setDone ] = useState(false);
-    let { todos  } = props;
+    const todosContext = useContext(TodosContext);
+    let { todos } = todosContext;
     let filterTodos = todos.filter(item => item.done == statusDone )
     return (
         <div className="d-flex flex-column align-items-center ">
@@ -21,9 +23,6 @@ function TodoList(props) {
                 :   filterTodos.map(item => <Todo 
                         key={item.key} 
                         item={item} 
-                        delete={props.delete}
-                        done={props.done}
-                        edit={props.edit}
                         />
                 )
             }
