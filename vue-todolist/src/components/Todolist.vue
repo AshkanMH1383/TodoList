@@ -6,14 +6,15 @@
         </div>
     </nav>
         <Todo v-for="todo in todos" :todo="todo" :key="todo.key"
-        @delete-todo="$emit('delete-todo' , $event)" />
+        @delete-todo="$emit('delete-todo' , $event)" 
+        @edit-todo="$emit('edit-todo' , $event)"/>
 
       
 </template>
 <script>
 import Todo from './Todo.vue';
 export default {
-    emits : ['delete-todo'],
+    emits : ['delete-todo' , 'edit-todo'],
     props :{
         todos: {
             type: Array,

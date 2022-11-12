@@ -11,7 +11,8 @@
     <div class="todosList">
         <div class="container">
             <div class="d-flex flex-column align-items-center ">
-                <Todolist :todos="todos" @delete-todo="deleteTodo"/>
+                <Todolist :todos="todos" @delete-todo="deleteTodo"
+                @edit-todo="editTodo"/>
            </div>
         </div>
     </div>
@@ -39,6 +40,16 @@ export default {
     },
     deleteTodo(key) {
       this.todos = this.todos.filter(item => item.key != key)
+    },
+    editTodo({key , text}) {
+      this.todos = this.todos.map((item) => {
+        if(item.key == key) {
+          return {
+            ... item,
+            text: text
+          }
+        }
+      })
     }
   },
 }
