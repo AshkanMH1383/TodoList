@@ -6,14 +6,16 @@
         </div>
         <div>
             <button type="button" class="btn btn-info btn-sm">edit</button>
-            <button type="button" class="btn btn-danger btn-sm ml-1">delete</button>
+            <button type="button" class="btn btn-danger btn-sm ml-1" @click="$emit('delete-todo' , todo.key)">delete</button>
         </div>
     </div>
 </div>
 </template>
 
 <script>
+
 export default {
+    emits : ['delete-todo'],
     props : { todo : { type : Object , required: true}}
 }
 </script>

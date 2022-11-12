@@ -5,12 +5,15 @@
             <a class="nav-item nav-link font-weight-bold" id="nav-profile-tab">done <span class="badge badge-success">9</span></a>
         </div>
     </nav>
-        <Todo v-for="todo in todos" :todo="todo" :key="todo.key"></Todo>
+        <Todo v-for="todo in todos" :todo="todo" :key="todo.key"
+        @delete-todo="$emit('delete-todo' , $event)" />
+
       
 </template>
 <script>
 import Todo from './Todo.vue';
 export default {
+    emits : ['delete-todo'],
     props :{
         todos: {
             type: Array,
